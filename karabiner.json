@@ -16,7 +16,34 @@
                 },
                 "rules": [
                     {
-                        "description": "Vi Mode [S as Trigger Key]",
+                        "description":"Post Esc if Caps is tapped, Control if held.",
+                        "manipulators":[
+                           {
+                              "type":"basic",
+                              "from":{
+                                 "key_code":"left_control",
+                                 "modifiers":{
+                                    "optional":[
+                                       "any"
+                                    ]
+                                 }
+                              },
+                              "to":[
+                                 {
+                                    "key_code":"left_control",
+                                    "lazy":true
+                                 }
+                              ],
+                              "to_if_alone":[
+                                 {
+                                    "key_code":"escape"
+                                 }
+                              ]
+                           }
+                        ]
+                    },                     
+                    {
+                        "description": "Vi Mode [D as Trigger Key]",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -51,7 +78,7 @@
                                     },
                                     "simultaneous": [
                                         {
-                                            "key_code": "s"
+                                            "key_code": "d"
                                         },
                                         {
                                             "key_code": "j"
@@ -118,7 +145,7 @@
                                     },
                                     "simultaneous": [
                                         {
-                                            "key_code": "s"
+                                            "key_code": "d"
                                         },
                                         {
                                             "key_code": "k"
@@ -185,7 +212,7 @@
                                     },
                                     "simultaneous": [
                                         {
-                                            "key_code": "s"
+                                            "key_code": "d"
                                         },
                                         {
                                             "key_code": "h"
@@ -252,7 +279,7 @@
                                     },
                                     "simultaneous": [
                                         {
-                                            "key_code": "s"
+                                            "key_code": "d"
                                         },
                                         {
                                             "key_code": "l"
@@ -319,7 +346,7 @@
                                     },
                                     "simultaneous": [
                                         {
-                                            "key_code": "s"
+                                            "key_code": "d"
                                         },
                                         {
                                             "key_code": "f"
@@ -388,7 +415,7 @@
                                     },
                                     "simultaneous": [
                                         {
-                                            "key_code": "s"
+                                            "key_code": "d"
                                         },
                                         {
                                             "key_code": "b"
@@ -459,7 +486,7 @@
                                     },
                                     "simultaneous": [
                                         {
-                                            "key_code": "s"
+                                            "key_code": "d"
                                         },
                                         {
                                             "key_code": "w"
@@ -530,7 +557,7 @@
                                     },
                                     "simultaneous": [
                                         {
-                                            "key_code": "s"
+                                            "key_code": "d"
                                         },
                                         {
                                             "key_code": "0"
@@ -601,7 +628,7 @@
                                     },
                                     "simultaneous": [
                                         {
-                                            "key_code": "s"
+                                            "key_code": "d"
                                         },
                                         {
                                             "key_code": "4"
