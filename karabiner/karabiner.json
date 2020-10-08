@@ -43,7 +43,7 @@
                       ]
                   },
                   {
-                      "description": "Vi Mode [D as Trigger Key] - A as Altttt",
+                      "description": "Vi Mode [D as Trigger Key] - A as Alt",
                       "manipulators": [
                           {
                               "conditions": [
