@@ -129,7 +129,7 @@
                         ]
                     },
                     {
-                        "description": "CAPS LOCK + hjkl to arrow keys, ESCAPE (If Alone)",
+                        "description": "CAPS LOCK + HJKL to arrow keys, ESCAPE (If Alone)",
                         "manipulators": [
                             {
                                 "conditions": [
