@@ -16,7 +16,7 @@
                 },
                 "rules": [
                     {
-                        "description": "CAPS LOCK + SPACE to SHIFT",
+                        "description": "CAPS LOCK + S to SHIFT",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -27,7 +27,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "spacebar",
+                                    "key_code": "s",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -65,35 +65,6 @@
                                 "to": [
                                     {
                                         "key_code": "fn"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "CAPS LOCK + S to LEFT CONTROL + S",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "s",
-                                        "modifiers": "left_control"
                                     }
                                 ],
                                 "type": "basic"
