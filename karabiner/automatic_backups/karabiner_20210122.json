@@ -230,6 +230,35 @@
                         ]
                     },
                     {
+                        "description": "CAPS LOCK + I/O to PREV/NEXT Tabs",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "[",
+                                        "modifiers": ["left_command", "left_shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "CAPS LOCK + A to ALT key",
                         "manipulators": [
                             {
@@ -251,65 +280,6 @@
                                 "to": [
                                     {
                                         "key_code": "left_alt"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "CAPS LOCK + I/O to PREV/NEXT Tabs",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "i",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "open_bracket",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "o",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "close_bracket",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
                                     }
                                 ],
                                 "type": "basic"
