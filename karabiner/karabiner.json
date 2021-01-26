@@ -371,6 +371,74 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Double RIGHT SHIFT to TAB",
+                        "manipulators": [
+                        {
+                          "type": "basic",
+                          "from": {
+                            "key_code": "right_shift",
+                            "modifiers": {
+                              "optional": [
+                                "any"
+                              ]
+                            }                       
+                          },
+                          "to": [
+                            {
+                              "key_code": "tab"
+                            }
+                          ],
+                          "conditions": [
+                            {
+                              "type": "variable_if",
+                              "name": "right_shift pressed",
+                              "value": 1
+                            }
+                          ]
+                        },
+                        {
+                          "type": "basic",
+                          "from": {
+                            "key_code": "right_shift",
+                            "modifiers": {
+                              "optional": [
+                                "any"
+                              ]
+                            }
+                          },
+                          "to": [
+                            {
+                              "set_variable": {
+                                "name": "right_shift pressed",
+                                "value": 1
+                              }
+                            },
+                            {
+                              "key_code": "right_shift"
+                            }
+                          ],
+                          "to_delayed_action": {
+                            "to_if_invoked": [
+                              {
+                                "set_variable": {
+                                  "name": "right_shift pressed",
+                                  "value": 0
+                                }
+                              }
+                            ],
+                            "to_if_canceled": [
+                              {
+                                "set_variable": {
+                                  "name": "right_shift pressed",
+                                  "value": 0
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
                     }
                 ]
             },
