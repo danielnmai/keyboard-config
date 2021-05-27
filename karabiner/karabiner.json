@@ -148,7 +148,7 @@
                         ]
                     },
                     {
-                        "description": "CAPS LOCK + SPACE to SHIFT",
+                        "description": "CAPS LOCK + S to SHIFT",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -159,7 +159,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "spacebar",
+                                    "key_code": "s",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -204,7 +204,7 @@
                         ]
                     },
                     {
-                        "description": "CAPS LOCK + S to LEFT CONTROL + S",
+                        "description": "CAPS LOCK + A to LEFT CONTROL + S",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -215,7 +215,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "s",
+                                    "key_code": "a",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -233,7 +233,7 @@
                         ]
                     },
                     {
-                        "description": "CAPS LOCK + A to ALT key",
+                        "description": "CAPS LOCK + D to ALT key",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -244,7 +244,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "a",
+                                    "key_code": "d",
                                     "modifiers": {
                                         "optional": [
                                             "any"
