@@ -454,134 +454,134 @@
                     {
                         "description": "TILDE: Double Tap -> ESCAPE, Single Tap -> TILDE",
                         "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "tilde pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "grave_accent_and_tilde"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "escape"
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "tilde pressed",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
+                          {
+                            "type": "basic",
+                            "from": {
+                              "key_code": "grave_accent_and_tilde"
                             },
-                            {
-                                "from": {
-                                    "key_code": "grave_accent_and_tilde"
+                            "to": [
+                              {
+                                "key_code": "escape"
+                              }
+                            ],
+                            "to_after_key_up": [
+                              {
+                                "set_variable": {
+                                  "name": "tilde pressed",
+                                  "value": 0
+                                }
+                              }
+                            ],
+                            "conditions": [
+                              {
+                                "type": "variable_if",
+                                "name": "tilde pressed",
+                                "value": 1
+                              }
+                            ]
+                          },
+                          {
+                            "type": "basic",
+                            "parameters": {
+                              "basic.to_delayed_action_delay_milliseconds": 150
+                            },
+                            "from": {
+                              "key_code": "grave_accent_and_tilde"
+                            },
+                            "to": [
+                              {
+                                "set_variable": {
+                                  "name": "tilde pressed",
+                                  "value": 1
+                                }
+                              }
+                            ],
+                            "to_delayed_action": {
+                              "to_if_invoked": [
+                                {
+                                  "set_variable": {
+                                    "name": "tilde pressed",
+                                    "value": 0
+                                  }
                                 },
-                                "parameters": {
-                                    "basic.to_delayed_action_delay_milliseconds": 150
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "tilde pressed",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_delayed_action": {
-                                    "to_if_invoked": [
-                                        {
-                                            "set_variable": {
-                                                "name": "tilde pressed",
-                                                "value": 0
-                                            }
-                                        },
-                                        {
-                                            "key_code": "grave_accent_and_tilde"
-                                        }
-                                    ]
-                                },
-                                "type": "basic"
+                                {
+                                  "key_code": "grave_accent_and_tilde"
+                                }
+                              ]
                             }
+                          }
                         ]
                     },
                     {
                         "description": "Double RIGHT SHIFT to toggle CAPSLOCK",
                         "manipulators": [
+                        {
+                          "type": "basic",
+                          "parameters": {
+                            "basic.to_delayed_action_delay_milliseconds": 150
+                          },
+                          "from": {
+                            "key_code": "right_shift",
+                            "modifiers": {
+                              "optional": [
+                                "any"
+                              ]
+                            }                       
+                          },
+                          "to": [
                             {
-                                "conditions": [
-                                    {
-                                        "name": "right_shift pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "parameters": {
-                                    "basic.to_delayed_action_delay_milliseconds": 150
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "caps_lock"
-                                    }
-                                ],
-                                "type": "basic"
+                              "key_code": "caps_lock"
+                            }
+                          ],
+                          "conditions": [
+                            {
+                              "type": "variable_if",
+                              "name": "right_shift pressed",
+                              "value": 1
+                            }
+                          ]
+                        },
+                        {
+                          "type": "basic",
+                          "from": {
+                            "key_code": "right_shift",
+                            "modifiers": {
+                              "optional": [
+                                "any"
+                              ]
+                            }
+                          },
+                          "to": [
+                            {
+                              "set_variable": {
+                                "name": "right_shift pressed",
+                                "value": 1
+                              }
                             },
                             {
-                                "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "right_shift pressed",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "key_code": "right_shift"
-                                    }
-                                ],
-                                "to_delayed_action": {
-                                    "to_if_canceled": [
-                                        {
-                                            "set_variable": {
-                                                "name": "right_shift pressed",
-                                                "value": 0
-                                            }
-                                        }
-                                    ],
-                                    "to_if_invoked": [
-                                        {
-                                            "set_variable": {
-                                                "name": "right_shift pressed",
-                                                "value": 0
-                                            }
-                                        }
-                                    ]
-                                },
-                                "type": "basic"
+                              "key_code": "right_shift"
                             }
-                        ]
+                          ],
+                          "to_delayed_action": {
+                            "to_if_invoked": [
+                              {
+                                "set_variable": {
+                                  "name": "right_shift pressed",
+                                  "value": 0
+                                }
+                              }
+                            ],
+                            "to_if_canceled": [
+                              {
+                                "set_variable": {
+                                  "name": "right_shift pressed",
+                                  "value": 0
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
                     }
                 ]
             },
@@ -650,19 +650,6 @@
                     "ignore": false,
                     "manipulate_caps_lock_led": false,
                     "simple_modifications": []
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 50475,
-                        "vendor_id": 1133
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": false,
-                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [
@@ -670,121 +657,97 @@
                     "from": {
                         "key_code": "f1"
                     },
-                    "to": [
-                        {
-                            "key_code": "pause"
-                        }
-                    ]
+                    "to": {
+                        "key_code": "pause"
+                    }
                 },
                 {
                     "from": {
                         "key_code": "f2"
                     },
-                    "to": [
-                        {
-                            "key_code": "scroll_lock"
-                        }
-                    ]
+                    "to": {
+                        "key_code": "scroll_lock"
+                    }
                 },
                 {
                     "from": {
                         "key_code": "f3"
                     },
-                    "to": [
-                        {
-                            "key_code": "vk_mission_control"
-                        }
-                    ]
+                    "to": {
+                        "key_code": "vk_mission_control"
+                    }
                 },
                 {
                     "from": {
                         "key_code": "f4"
                     },
-                    "to": [
-                        {
-                            "key_code": "vk_launchpad"
-                        }
-                    ]
+                    "to": {
+                        "key_code": "vk_launchpad"
+                    }
                 },
                 {
                     "from": {
                         "key_code": "f5"
                     },
-                    "to": [
-                        {
-                            "key_code": "vk_consumer_illumination_down"
-                        }
-                    ]
+                    "to": {
+                        "key_code": "vk_consumer_illumination_down"
+                    }
                 },
                 {
                     "from": {
                         "key_code": "f6"
                     },
-                    "to": [
-                        {
-                            "key_code": "vk_consumer_illumination_up"
-                        }
-                    ]
+                    "to": {
+                        "key_code": "vk_consumer_illumination_up"
+                    }
                 },
                 {
                     "from": {
                         "key_code": "f7"
                     },
-                    "to": [
-                        {
-                            "key_code": "vk_consumer_previous"
-                        }
-                    ]
+                    "to": {
+                        "key_code": "vk_consumer_previous"
+                    }
                 },
                 {
                     "from": {
                         "key_code": "f8"
                     },
-                    "to": [
-                        {
-                            "key_code": "vk_consumer_play"
-                        }
-                    ]
+                    "to": {
+                        "key_code": "vk_consumer_play"
+                    }
                 },
                 {
                     "from": {
                         "key_code": "f9"
                     },
-                    "to": [
-                        {
-                            "key_code": "vk_consumer_next"
-                        }
-                    ]
+                    "to": {
+                        "key_code": "vk_consumer_next"
+                    }
                 },
                 {
                     "from": {
                         "key_code": "f10"
                     },
-                    "to": [
-                        {
-                            "key_code": "mute"
-                        }
-                    ]
+                    "to": {
+                        "key_code": "mute"
+                    }
                 },
                 {
                     "from": {
                         "key_code": "f11"
                     },
-                    "to": [
-                        {
-                            "key_code": "volume_down"
-                        }
-                    ]
+                    "to": {
+                        "key_code": "volume_down"
+                    }
                 },
                 {
                     "from": {
                         "key_code": "f12"
                     },
-                    "to": [
-                        {
-                            "key_code": "volume_up"
-                        }
-                    ]
+                    "to": {
+                        "key_code": "volume_up"
+                    }
                 }
             ],
             "name": "Default",
@@ -796,7 +759,6 @@
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "country_code": 0,
-                "indicate_sticky_modifier_keys_state": true,
                 "keyboard_type": "ansi",
                 "mouse_key_xy_scale": 100
             }
